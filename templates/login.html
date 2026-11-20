@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>MailSpace Demo</title>
+    <link rel="stylesheet"
+          href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>MailSpace</h1>
+
+    <h2>Welcome Back</h2>
+
+    <p>Sign in to your demo account</p>
+
+    <form action="/simulate" method="POST">
+
+        <label>Email Address</label>
+
+        <input
+            type="email"
+            name="email"
+            placeholder="demo@example.test"
+            required
+        >
+
+        <label>Password</label>
+
+        <input
+            type="password"
+            name="password_captured"
+            placeholder="Not collected"
+            required
+            autocomplette="off"
+        >
+
+        <button type="submit">
+            Run Demo Simulation
+        </button>
+
+    </form>
+
+    <p class="notice">
+        Educational simulation.
+        No password is collected.
+    </p>
+
+    {% if message %}
+        <p class="success">{{ message }}</p>
+    {% endif %}
+
+</div>
+
+</body>
+</html>

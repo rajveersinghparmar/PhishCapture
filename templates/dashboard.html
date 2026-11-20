@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PhishCapture Dashboard</title>
+    <link rel="stylesheet"
+          href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>PhishCapture</h1>
+
+    <h2>Simulation Dashboard</h2>
+
+    <p>Total Attempts: {{ records|length }}</p>
+
+    {% for record in records %}
+
+        <hr>
+
+        <p>Attempt ID: {{ record[0] }}</p>
+
+        <p>Email: {{ record[1] }}</p>
+
+        <p>Time: {{ record[2] }}</p>
+
+        <p>Password: {{ record[3] }}</p>
+
+    {% else %}
+
+        <p>No simulation attempts yet.</p>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
